@@ -3,6 +3,7 @@ import { Providers } from "../components/providers";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import siteMetadata from "../../data/sitemetadata";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -27,7 +28,7 @@ export const metadata = {
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.siteName,
-    locale: siteMetadata.language,  
+    locale: siteMetadata.language,
   },
 };
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

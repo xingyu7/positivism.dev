@@ -8,6 +8,10 @@ import readingTime from "reading-time";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
+  urlslug: {
+    type: "string",
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  },
   slug: {
     type: "string",
     resolve: (doc) => `/${doc._raw.flattenedPath}`.toLowerCase(),
@@ -87,6 +91,11 @@ export const Post = defineDocumentType(() => ({
       default: false,
       required: false,
     },
+    featured: {
+      type: "boolean",
+      default: false,
+      required: false,
+    },
     categories: {
       type: "list",
       default: [],
@@ -107,7 +116,7 @@ export default makeSource({
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath],
     rehypePlugins: [
-      [rehypePrettyCode, { theme: "github-dark-dimmed", keepBackground: false }],
+      [rehypePrettyCode, { theme: "github-dark-dimmed", keepBackground: true }],
       rehypeKatex,
       rehypeSlug,
     ],
