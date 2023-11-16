@@ -7,7 +7,7 @@ const siteMetadata = {
   description:
     "在知识幻觉和实证中摇摆",
   language: "zh",
-  keywords:['positivism', '实证','刘星宇','Xingyu'],
+  keywords:['positivism', '实证','刘星宇','Xingyu','金融','经济'],
   siteUrl: "https://positivism.dev",
   siteRepo: "positivism.dev",
   repoid:"R_kgDOKJn3Lw",
